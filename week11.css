@@ -1,0 +1,27 @@
+
+h1 {
+  color: white;
+}
+
+.my-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+  width: 70vmin;
+  height: 70vmin;
+}
+
+.cell {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

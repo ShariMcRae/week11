@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link  rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="week11.css" />
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <h1 class="px-1 pb-3 pt-3 ">Let's Play Tic-Tac-Toe!</h1>
+        </div>
+        <div class="col-3 d-flex justify-content-end align-items-center">
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="playAgain"
+            onClick="location.reload();" >
+            Restart Game
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-primary text-center" role="alert">
+            <h4 id="announcement">It is currently X's turn.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-container">
+      <div class="grid">
+        <div class="cell row1">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row1">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row1">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row2">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row2">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row2">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row3">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row3">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+        <div class="cell row3">
+          <img class="empty img-responsive" src="images/blank.png" height="100%" />
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="banner">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header alert-primary">
+            <p class="modal-title fs-3"></p>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-1 fw-bold">
+            <p class="text-center" id="modalBody"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="week11.js"></script>
+  </body>
+</html>
