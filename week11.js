@@ -2,8 +2,8 @@
 let playerXisPlaying = true;
 
 // helper variables
-let announcementCell = document.getElementById("announcement");
-let modalBody = document.getElementById("modalBody");
+const announcementCell = document.getElementById("announcement");
+const modalBody = document.getElementById("modalBody");
 const modalTitle = document.querySelector("p.modal-title");
 
 // For each cell in the Tic-Tac-To grid...
@@ -21,20 +21,20 @@ cells.forEach((cell) => {
       // and update the announcement alert to show whose turn it is.
       if (playerXisPlaying) {
         cell.classList.add("X");
-        cell.innerHTML = "<img src='images/x.png' class='img-responsive'/>";
+        cell.innerHTML = "<img src='images/x.png' class='img-fluid'/>";
         announcementCell.innerHTML = "It is currently O's turn.";
 
       } else {
         cell.classList.add("O");
-        cell.innerHTML = "<img src='images/o.png' class='img-responsive'/>";
+        cell.innerHTML = "<img src='images/o.png' class='img-fluid'/>";
         announcementCell.innerHTML = "It is currently X's turn.";
       }
 
       // If there is a winner, update the announcement alert,
       // update the content of the modal and display it.
       if (thereIsAWinner(playerXisPlaying)) {
-        announcementCell.innerHTML = (playerXisPlaying ? "X" : "O") + " is the winner!";
-        modalBody.innerHTML = announcementCell.innerHTML;
+        announcementCell.innerHTML = "Let's play again!";
+        modalBody.innerHTML = (playerXisPlaying ? "X" : "O") + " is the winner!";
         modalTitle.innerHTML = "Congratulations!";
         myModal.show();
 
@@ -42,8 +42,8 @@ cells.forEach((cell) => {
       // update the announcement alert,
       // update the content of the modal and display it.
       } else if (document.querySelectorAll(".empty").length === 0) {
-        announcementCell.innerHTML = "It's a draw!";
-        modalBody.innerHTML = announcementCell.innerHTML;
+        announcementCell.innerHTML = "Let's play again!";
+        modalBody.innerHTML = "It's a draw!";
         modalTitle.innerHTML = "Well now!";
         myModal.show();
       }
@@ -113,6 +113,6 @@ function thereIsAWinner(playerXisPlaying) {
 }
 
 // Create our Modal dialog object.
-var myModal = new bootstrap.Modal(document.getElementById("banner"), {
-  keyboard: false,
+let myModal = new bootstrap.Modal(document.getElementById("banner"), {
+  keyboard: true,
 });
